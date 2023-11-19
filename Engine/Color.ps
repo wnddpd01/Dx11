@@ -1,0 +1,13 @@
+struct PixelInputType
+{
+	float4 position : SV_POSITION;
+	float4 color : COLOR;
+};
+
+float4 ColorPixelShader(PixelInputType input) : SV_TARGET
+{
+	float4 returnColor = input.color;
+
+	returnColor.g = returnColor.r * 0.5f;
+	return returnColor;
+}
